@@ -28,10 +28,6 @@ const count = ref(0)
   </p>
 
   <Button @click="count++">Count is: {{ count }}</Button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
 </template>
 
 <style scoped>
