@@ -1,17 +1,25 @@
-import DcButton from '../components/Button.vue';
+import DcButton from './Button.vue';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: 'DC/Button',
+  title: 'DC/Button/Type',
   component: DcButton,
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     // backgroundColor: { control: 'color' },
     // onClick: {},
-    // size: {
-    //   control: { type: 'select' },
-    //   options: ['small', 'medium', 'large'],
-    // },
+    color: {
+      control: { type: 'select' },
+      options: ['default', 'alternative', 'dark', 'light', 'success', 'danger', 'warning', 'purple'],
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['xs', 'sm', 'base', 'lg', 'xl'],
+    },
+    type: {
+      control: { type: 'select' },
+      options: ['submit', 'button', 'reset'],
+    },
   },
 };
 
@@ -32,16 +40,22 @@ export const Submit = Template.bind({});
 Submit.args = {
   type: 'submit',
   label: 'Submit',
+  size: 'base',
+  color: 'default'
 };
 
 export const Reset = Template.bind({});
 Reset.args = {
   label: 'Reset',
   type: 'reset',
+  size: 'base',
+  color: 'default'
 };
 
 export const Button = Template.bind({});
 Button.args = {
   label: 'Button',
-  type: 'button'
+  type: 'button',
+  size: 'base',
+  color: 'default'
 };
